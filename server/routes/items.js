@@ -13,6 +13,15 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//
+// update an item
+router.put("/:id", async (req, res, next) => {
+  try {
+    const item = await Item.findByPk(req.params.id);
+    const updated = await item.update(req.body);
+    res.send(updated);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
