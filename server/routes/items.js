@@ -13,10 +13,12 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//Express route to get one sauce item by its Id
-router.get("/:id", async (req, res, next) => {
+// update an item
+router.put("/:id", async (req, res, next) => {
   try {
-    const item = await Sauce.findByPk(req.params.id);
+    const item = await Item.findByPk(req.params.id);
+    const updated = await item.update(req.body);
+    res.send(updated);
   } catch (error) {
     next(error);
   }
