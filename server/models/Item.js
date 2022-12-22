@@ -1,6 +1,6 @@
 const { sequelize } = require("../db");
 const { Sequelize, DataTypes } = require("sequelize");
-const Item = sequelize.define("items", {
+const Item = sequelize.define("Item", {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -10,7 +10,7 @@ const Item = sequelize.define("items", {
     allowNull: false,
   },
   price: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.FLOAT,
     allowNull: false,
   },
   category: {
