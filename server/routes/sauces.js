@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Sauce } = require("../models/Sauce");
-const { check, validationResult } = require("express-validator");
+
 
 // app.use(express.json());
 
