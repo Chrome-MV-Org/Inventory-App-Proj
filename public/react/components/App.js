@@ -27,7 +27,8 @@ export const App = () => {
 		<main>	
       <h1>Store</h1>
 			<h2>All things 🔥</h2>
-			<ItemsList items={items} />
+			{items.length>0 ? <ItemsList items={items} /> : ""}
+			
 		</main>
 	)
 }
