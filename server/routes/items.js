@@ -13,6 +13,13 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//
+//Express route to get one sauce item by its Id
+router.get("/:id", async (req, res, next) => {
+  try {
+    const item = await Sauce.findByPk(req.params.id);
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;
