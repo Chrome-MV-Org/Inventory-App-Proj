@@ -3,11 +3,12 @@ const router = express.Router();
 const { Sauce } = require("../models/Sauce");
 const { check, validationResult } = require("express-validator");
 
-app.use(express.json());
+// app.use(express.json());
 
 // Express route to get all sauce items
 router.get("/", async (req, res, next) => {
   try {
+    console.log("we are here");
     const sauces = await Sauce.findAll();
     res.send(sauces);
   } catch (error) {
