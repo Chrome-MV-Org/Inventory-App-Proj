@@ -4,7 +4,7 @@ const { Item } = require("../models/Item");
 const { check, validationResult } = require("express-validator");
 
 // GET All sauce
-router.get("/", async (req, res, next) => {
+router.get("/", async (req, res) => {
   try {
     const items = await Item.findAll();
     res.send(items);
