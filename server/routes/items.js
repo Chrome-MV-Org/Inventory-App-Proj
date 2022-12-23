@@ -43,4 +43,11 @@ router.put("/:id", async (req, res, next) => {
 });
 
 
+//delete an item
+router.delete("/:id", async (req, res) => {
+  await Item.destroy({ where: { id: req.params.id } });
+  const deletedItem = await Item.findAll();
+  res.json(deletedItem);
+});
+
 module.exports = router;
