@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemsList from './ItemsList';
-
+import {Form} from './Form';
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
 
@@ -26,9 +26,10 @@ export const App = () => {
 	return (
 		<main>	
       <h1>Store</h1>
+	  <Form/>
 			<h2>All things 🔥</h2>
 			{items.length>0 ? <ItemsList items={items} /> : ""}
-			
+		
 		</main>
 	)
 }
