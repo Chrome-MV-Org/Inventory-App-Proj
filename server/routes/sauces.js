@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { Sauce } = require("../models/Sauce");
-// const { check, validationResult } = require("express-validator");
 
 // app.use(express.json());
 
@@ -20,6 +19,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const sauce = await Sauce.findByPk(req.params.id);
+    res.send(sauce);
   } catch (error) {
     next(error);
   }

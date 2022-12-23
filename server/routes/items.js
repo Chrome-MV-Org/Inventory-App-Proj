@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { Item } = require("../models/Item");
-// const { check, validationResult } = require("express-validator");
 
 // GET All items
 router.get("/", async (req, res, next) => {
@@ -13,6 +12,15 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+//GET one Item
+router.get("/:id", async (req, res, next) => {
+  try {
+    const item = await Item.findByPk(req.params.id);
+    res.send(item);
+  } catch (error) {
+    next(error);
+  }
+});
 // update an item
 router.put("/:id", async (req, res, next) => {
   try {
