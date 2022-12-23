@@ -12,6 +12,11 @@ router.get("/", async (req, res, next) => {
     next(error);
   }
 });
+
+//get one item
+router.get("/:id", async (req,res)=>{
+    res.json(await Item.findByPk(req.params.id))
+})
 // // post an item 
 router.post('/', async (req,res,next)=> {
   try{
