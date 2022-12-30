@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+
 import apiURL from '../api';
 
 
@@ -13,6 +14,15 @@ export const Item = (props) => {
     console.log(item)
     
   }
+  const handleDelete = async()=>{
+    const res = await fetch(`${apiURL}/items/${props.item.id}`,
+    {method : "DELETE"}
+    )
+    
+    const data = await res.json();
+    setItem(null);
+
+  }
   return <>
   
     <h3 onClick={handleClick}>{props.item.title}</h3>
@@ -25,6 +35,9 @@ export const Item = (props) => {
       </div>
 
     }
+    <button onClick={handleDelete}>
+      DELETE ITEM
+    </button>
     <img src={props.item.image} alt={props.item.title} />
   </>
 } 
