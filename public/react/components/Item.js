@@ -35,9 +35,11 @@ export const Item = (props) => {
       </div>
 
     }
-    <button onClick={handleDelete}>
+    {item &&
+      <div><button onClick={handleDelete}>
       DELETE ITEM
     </button>
+    <button>EDIT ITEM</button></div>}
     <img src={props.item.image} alt={props.item.title} />
   </>
 } 
