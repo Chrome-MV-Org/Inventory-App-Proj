@@ -40,7 +40,7 @@ export const Form = () =>{
     
   return (
     <>
-    <h1>add item</h1>
+    <h1>Add Item</h1>
     <form onSubmit={handleSubmit}>
     <input type='text'name="title" placeholder="title"
     value={title} onChange={(e) => setTitle(e.target.value)}
