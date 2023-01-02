@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 
 import apiURL from '../api';
 
+import { UpdForm } from './UpdForm';
+
 
 export const Item = (props) => {
   const [item, setItem] = useState(undefined)
@@ -40,7 +42,7 @@ export const Item = (props) => {
       DELETE ITEM
     </button>
     <button onClick={() => props.setUpdateItem(!props.updateItem)}>EDIT ITEM</button></div>}
-    <p>{props.updateItem}</p>
+    {props.updateItem ? <UpdForm item={props.item}/>: null}
     <img src={props.item.image} alt={props.item.title} />
   </>
 } 
