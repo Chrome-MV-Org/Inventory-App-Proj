@@ -22,12 +22,10 @@ app.use("/api", require("./routes/index"));
 
 // 404 handler
 app.use((req, res) => {
-  res
-    .status(404)
-    .send({
-      error: "404 - Not Found",
-      message: "No route found for the requested URL",
-    });
+  res.status(404).send({
+    error: "404 - Not Found",
+    message: "No route found for the requested URL",
+  });
 });
 
 // error handling middleware
@@ -42,6 +40,6 @@ app.use((error, req, res, next) => {
   });
 });
 
-// 
+//
 
 module.exports = app;

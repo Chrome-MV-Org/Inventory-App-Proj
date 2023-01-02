@@ -6,21 +6,35 @@ const { Item } = require("../models/Item");
 router.get("/", async (req, res, next) => {
   try {
     const items = await Item.findAll();
-    res.send(items);
+    res.json(items);
   } catch (error) {
     next(error);
   }
 });
 
-//GET one Item
-router.get("/:id", async (req, res, next) => {
+// <<<<<<< HEAD
+//get one item
+router.get("/:id", async (req, res) => {
+  res.json(await Item.findByPk(req.params.id));
+});
+
+// // post an item
+router.post("/", async (req, res, next) => {
   try {
-    const item = await Item.findByPk(req.params.id);
-    res.send(item);
+    const item = await Item.create({
+      title: req.body.title,
+      price: req.body.price,
+      description: req.body.description,
+      category: req.body.category,
+      image: req.body.image,
+    });
+    res.json(item);
   } catch (error) {
     next(error);
   }
 });
+
+// >>>>>>> main
 // update an item
 router.put("/:id", async (req, res, next) => {
   try {
