@@ -35,6 +35,9 @@ export const Item = (props) => {
       </div>
 
     }
+    
+
+
     <button onClick={handleDelete}>
       DELETE ITEM
     </button>
