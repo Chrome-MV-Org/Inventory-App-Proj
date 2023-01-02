@@ -7,6 +7,8 @@ import apiURL from '../api';
 export const App = () => {
 	
 	const [items, setItems] = useState([]);
+	const [updateItem, setUpdateItem] = useState(false)
+
 
 	async function fetchItems(){
 		try {
@@ -22,13 +24,13 @@ export const App = () => {
 	useEffect(() => {
 		fetchItems();
 	}, []);
-
+console.log(updateItem);
 	return (
 		<main>	
       <h1>Store</h1>
 	  <Form/>
 			<h2>All things 🔥</h2>
-			{items.length>0 ? <ItemsList items={items} /> : ""}
+			{items.length>0 ? <ItemsList setUpdateItem={setUpdateItem} updateItem={updateItem} items={items} /> : ""}
 		
 		</main>
 	)

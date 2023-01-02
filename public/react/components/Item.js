@@ -35,12 +35,12 @@ export const Item = (props) => {
       </div>
 
     }
-    
-
-
-    <button onClick={handleDelete}>
+    {item &&
+      <div><button onClick={handleDelete}>
       DELETE ITEM
     </button>
+    <button onClick={() => props.setUpdateItem(!props.updateItem)}>EDIT ITEM</button></div>}
+    <p>{props.updateItem}</p>
     <img src={props.item.image} alt={props.item.title} />
   </>
 } 

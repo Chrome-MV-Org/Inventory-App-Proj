@@ -1,7 +1,7 @@
 import React from "react";
 import {Item} from "./Item"
 
-const ItemsList = ({items}) =>{
+const ItemsList = ({items,setUpdateItem,updateItem}) =>{
     console.log(items)
     return(
         <>
@@ -9,7 +9,8 @@ const ItemsList = ({items}) =>{
           
             items.map((item,index)=>{
                 return(
-                <Item item={item} key={index}/>)
+                <Item item={item} key={index} setUpdateItem={setUpdateItem} updateItem={updateItem}/>)
+            
             })
         }
         </>
