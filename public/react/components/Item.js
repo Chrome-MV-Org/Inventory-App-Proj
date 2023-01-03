@@ -27,7 +27,7 @@ export const Item = (props) => {
   }
   return <>
   
-    <h3 onClick={handleClick}>{props.item.title}</h3>
+    <h3>{props.item.title}</h3>
     
     {
       item &&
@@ -43,6 +43,6 @@ export const Item = (props) => {
     </button>
     <button onClick={() => props.setUpdateItem(!props.updateItem)}>EDIT ITEM</button></div>}
     {props.updateItem ? <UpdForm item={props.item}/>: null}
-    <img src={props.item.image} alt={props.item.title} />
+    <img src={props.item.image} alt={props.item.title} onClick={handleClick}/>
   </>
 } 
