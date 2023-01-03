@@ -8,7 +8,7 @@ export const UpdForm = (props) => {
     const [image, setImage] = useState(props.item.image);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         console.log(e)
         const response = await fetch(`${apiURL}/items/${props.item.id}`, {
             method: "PUT",
