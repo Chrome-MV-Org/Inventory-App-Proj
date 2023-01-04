@@ -11,7 +11,7 @@ export const Form = () =>{
     const [image,setImage]= useState(''); 
 
     const  handleSubmit = async (event) => {
-        event.preventDefault();
+        //event.preventDefault();
         const newItem = {
             title: title,
             category: category,
